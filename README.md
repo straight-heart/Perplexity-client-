@@ -41,6 +41,3 @@ npm run build:mac  # For macOS
 npm run build:linux # For Linux
 ```
 
-## License
-
-[MIT](LICENSE)
