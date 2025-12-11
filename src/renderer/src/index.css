@@ -1,0 +1,665 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Default to Dark theme */
+    --background: 0 0% 7%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 84.2% 60.2%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 0 84.2% 60.2%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 14%;
+    --ring: 0 84.2% 60.2%;
+
+    --radius: 0.75rem;
+  }
+
+  :root[data-theme="dark"] {
+    /* Dark theme with red accents - Fixed colors */
+    --background: 0 0% 7%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 84.2% 60.2%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 0 84.2% 60.2%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 14%;
+    --ring: 0 84.2% 60.2%;
+
+    --radius: 0.75rem;
+  }
+
+  :root[data-theme="light"] {
+    /* Light theme with red accents */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 0 72.2% 50.6%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 0 72.2% 50.6%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --input: 0 0% 96%;
+    --ring: 0 72.2% 50.6%;
+
+    --radius: 0.75rem;
+  }
+
+  :root[data-theme="night"] {
+    /* Night theme - Deep Blue/Purple */
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 263.4 70% 50.4%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 240 4% 16%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 263.4 70% 50.4%;
+
+    --radius: 0.75rem;
+  }
+
+  :root[data-theme="oled"] {
+    /* OLED theme - Pure Black */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 100%;
+
+    --radius: 0.75rem;
+  }
+
+  :root[data-theme="warm"] {
+    /* Warm theme - Earthy/Coffee tones */
+    --background: 30 15% 94%;
+    --foreground: 20 50% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 50% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 50% 15%;
+
+    --primary: 24.6 95% 53.1%;
+    --primary-foreground: 60 9.1% 97.8%;
+
+    --secondary: 30 15% 85%;
+    --secondary-foreground: 24 9.8% 10%;
+
+    --muted: 30 15% 85%;
+    --muted-foreground: 25 5.3% 44.7%;
+
+    --accent: 30 15% 85%;
+    --accent-foreground: 24 9.8% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+
+    --border: 20 5.9% 80%;
+    --input: 20 5.9% 80%;
+    --ring: 24.6 95% 53.1%;
+
+    --radius: 0.75rem;
+  }
+
+  :root[data-theme="lofi"] {
+    /* Lofi theme - Purple/Pastel Vibe */
+    --background: 256 42% 95%;
+    /* #f3f0f9 */
+    --foreground: 256 60% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 256 60% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 256 60% 20%;
+
+    --primary: 256 42% 50%;
+    /* #674ab3 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 299 21% 90%;
+    --secondary-foreground: 256 42% 10%;
+
+    --muted: 299 21% 90%;
+    --muted-foreground: 256 20% 50%;
+
+    --accent: 299 21% 90%;
+    --accent-foreground: 256 42% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 256 20% 85%;
+    --input: 256 20% 90%;
+    --ring: 256 42% 50%;
+
+    --radius: 0.75rem;
+  }
+
+  :root[data-theme="macha"] {
+    /* Macha theme - Green Tea tones */
+    --background: 140 20% 96%;
+    --foreground: 140 60% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 140 60% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 140 60% 15%;
+
+    --primary: 142.1 76.2% 36.3%;
+    --primary-foreground: 355.7 100% 97.3%;
+
+    --secondary: 140 20% 90%;
+    --secondary-foreground: 140 40% 10%;
+
+    --muted: 140 20% 90%;
+    --muted-foreground: 140 10% 40%;
+
+    --accent: 140 20% 90%;
+    --accent-foreground: 140 40% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 140 20% 85%;
+    --input: 140 20% 90%;
+    --ring: 142.1 76.2% 36.3%;
+
+    --radius: 0.75rem;
+  }
+
+  /* NEW THEMES */
+
+  :root[data-theme="midnight"] {
+    /* Midnight - Deep Blue */
+    --background: 220 50% 10%;
+    --foreground: 210 20% 98%;
+    --card: 220 50% 13%;
+    --card-foreground: 210 20% 98%;
+    --popover: 220 50% 13%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 210 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 30% 20%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 220 30% 20%;
+    --muted-foreground: 220 20% 60%;
+    --accent: 220 30% 20%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 30% 20%;
+    --input: 220 30% 20%;
+    --ring: 210 100% 60%;
+    --radius: 0.75rem;
+  }
+
+  :root[data-theme="forest"] {
+    /* Forest - Deep Green */
+    --background: 150 40% 6%;
+    --foreground: 140 20% 96%;
+    --card: 150 40% 8%;
+    --card-foreground: 140 20% 96%;
+    --popover: 150 40% 8%;
+    --popover-foreground: 140 20% 96%;
+    --primary: 140 60% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 150 20% 15%;
+    --secondary-foreground: 140 20% 96%;
+    --muted: 150 20% 15%;
+    --muted-foreground: 150 10% 60%;
+    --accent: 150 20% 15%;
+    --accent-foreground: 140 20% 96%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 150 20% 15%;
+    --input: 150 20% 15%;
+    --ring: 140 60% 50%;
+    --radius: 0.75rem;
+  }
+
+  :root[data-theme="sunset"] {
+    /* Sunset - Dark Orange/Red */
+    --background: 15 30% 8%;
+    --foreground: 20 20% 96%;
+    --card: 15 30% 10%;
+    --card-foreground: 20 20% 96%;
+    --popover: 15 30% 10%;
+    --popover-foreground: 20 20% 96%;
+    --primary: 20 90% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 15 20% 18%;
+    --secondary-foreground: 20 20% 96%;
+    --muted: 15 20% 18%;
+    --muted-foreground: 15 10% 60%;
+    --accent: 15 20% 18%;
+    --accent-foreground: 20 20% 96%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 15 20% 18%;
+    --input: 15 20% 18%;
+    --ring: 20 90% 60%;
+    --radius: 0.75rem;
+  }
+
+  :root[data-theme="ocean"] {
+    /* Ocean - Deep Teal */
+    --background: 190 60% 6%;
+    --foreground: 180 20% 96%;
+    --card: 190 60% 8%;
+    --card-foreground: 180 20% 96%;
+    --popover: 190 60% 8%;
+    --popover-foreground: 180 20% 96%;
+    --primary: 180 80% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 190 30% 15%;
+    --secondary-foreground: 180 20% 96%;
+    --muted: 190 30% 15%;
+    --muted-foreground: 190 20% 60%;
+    --accent: 190 30% 15%;
+    --accent-foreground: 180 20% 96%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 190 30% 15%;
+    --input: 190 30% 15%;
+    --ring: 180 80% 50%;
+    --radius: 0.75rem;
+  }
+
+  :root[data-theme="terminal"] {
+    /* Terminal - Hacker Green */
+    --background: 120 10% 5%;
+    --foreground: 120 100% 50%;
+    --card: 120 10% 7%;
+    --card-foreground: 120 100% 50%;
+    --popover: 120 10% 7%;
+    --popover-foreground: 120 100% 50%;
+    --primary: 120 100% 50%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 120 20% 12%;
+    --secondary-foreground: 120 100% 50%;
+    --muted: 120 20% 12%;
+    --muted-foreground: 120 40% 40%;
+    --accent: 120 20% 12%;
+    --accent-foreground: 120 100% 50%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 0%;
+    --border: 120 20% 20%;
+    --input: 120 20% 15%;
+    --ring: 120 100% 50%;
+    --radius: 0.75rem;
+  }
+
+  :root[data-theme="synthwave"] {
+    /* Synthwave - Neon Purple/Pink */
+    --background: 270 50% 8%;
+    --foreground: 300 100% 90%;
+    --card: 270 50% 10%;
+    --card-foreground: 300 100% 90%;
+    --popover: 270 50% 10%;
+    --popover-foreground: 300 100% 90%;
+    --primary: 320 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 270 40% 20%;
+    --secondary-foreground: 300 100% 90%;
+    --muted: 270 40% 20%;
+    --muted-foreground: 270 40% 60%;
+    --accent: 270 40% 20%;
+    --accent-foreground: 300 100% 90%;
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 270 40% 30%;
+    --input: 270 40% 30%;
+    --ring: 320 100% 60%;
+    --radius: 0.75rem;
+  }
+
+  :root[data-theme="nord"] {
+    /* Nord - Cool Blue-Grey */
+    --background: 220 16% 22%;
+    --foreground: 218 20% 92%;
+    --card: 220 16% 26%;
+    --card-foreground: 218 20% 92%;
+    --popover: 220 16% 26%;
+    --popover-foreground: 218 20% 92%;
+    --primary: 193 43% 67%;
+    --primary-foreground: 220 16% 22%;
+    --secondary: 222 16% 30%;
+    --secondary-foreground: 218 20% 92%;
+    --muted: 222 16% 30%;
+    --muted-foreground: 218 10% 70%;
+    --accent: 222 16% 30%;
+    --accent-foreground: 218 20% 92%;
+    --destructive: 354 42% 56%;
+    --destructive-foreground: 218 20% 92%;
+    --border: 222 16% 40%;
+    --input: 222 16% 30%;
+    --ring: 193 43% 67%;
+    --radius: 0.75rem;
+  }
+
+  :root[data-theme="dracula"] {
+    /* Dracula - UPDATED (Red Accent) */
+    --background: 231 15% 18%;
+    /* #282a36 */
+    --foreground: 60 30% 96%;
+    /* #f8f8f2 */
+
+    --card: 232 14% 31%;
+    /* #44475a - Current Line */
+    --card-foreground: 60 30% 96%;
+
+    --popover: 232 14% 31%;
+    --popover-foreground: 60 30% 96%;
+
+    --primary: 0 100% 67%;
+    /* #ff5555 - Red (Official Dracula Red) */
+    --primary-foreground: 231 15% 18%;
+
+    --secondary: 232 14% 31%;
+    /* #44475a */
+    --secondary-foreground: 60 30% 96%;
+
+    --muted: 225 27% 51%;
+    /* #6272a4 - Comment (Purple-Grey) */
+    --muted-foreground: 60 30% 80%;
+
+    --accent: 232 14% 31%;
+    --accent-foreground: 60 30% 96%;
+
+    --destructive: 0 100% 67%;
+    --destructive-foreground: 60 30% 96%;
+
+    --border: 225 27% 51%;
+    /* #6272a4 */
+    --input: 232 14% 31%;
+    --ring: 0 100% 67%;
+
+    --radius: 0.75rem;
+  }
+
+  :root[data-theme="coffee"] {
+    /* Coffee - Warm Brown */
+    --background: 30 20% 12%;
+    --foreground: 36 30% 90%;
+    --card: 30 20% 16%;
+    --card-foreground: 36 30% 90%;
+    --popover: 30 20% 16%;
+    --popover-foreground: 36 30% 90%;
+    --primary: 35 40% 60%;
+    --primary-foreground: 30 20% 12%;
+    --secondary: 30 20% 24%;
+    --secondary-foreground: 36 30% 90%;
+    --muted: 30 20% 24%;
+    --muted-foreground: 30 10% 60%;
+    --accent: 30 20% 24%;
+    --accent-foreground: 36 30% 90%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 20% 30%;
+    --input: 30 20% 24%;
+    --ring: 35 40% 60%;
+    --radius: 0.75rem;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  /* Scrollbar styling - MacOS Style */
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted-foreground) / 0.4);
+    border: 4px solid transparent;
+    border-radius: 9999px;
+    background-clip: content-box;
+    transition: border 0.3s ease, background-color 0.3s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--muted-foreground) / 0.7);
+    border: 2px solid transparent;
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted-foreground) / 0.4) transparent;
+  }
+
+  /* Custom scrollbar class for specific containers */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    border: 1px solid transparent;
+  }
+}
+
+@layer components {
+
+  /* Message markdown styling */
+  .prose {
+    @apply max-w-none text-foreground;
+  }
+
+  .prose p {
+    @apply mb-4 text-foreground;
+  }
+
+  .prose pre {
+    @apply bg-secondary text-foreground rounded-lg p-4 overflow-x-auto;
+  }
+
+  .prose code {
+    @apply bg-secondary text-foreground px-1.5 py-0.5 rounded text-sm;
+  }
+
+  .prose ul,
+  .prose ol {
+    @apply ml-6 mb-4 text-foreground;
+  }
+
+  .prose li {
+    @apply mb-2 text-foreground;
+  }
+
+  .prose a {
+    @apply text-primary hover:underline;
+  }
+
+  .prose h1,
+  .prose h2,
+  .prose h3 {
+    @apply font-semibold mt-6 mb-3 text-foreground;
+  }
+
+  .prose h1 {
+    @apply text-2xl;
+  }
+
+  .prose h2 {
+    @apply text-xl;
+  }
+
+  .prose h3 {
+    @apply text-lg;
+  }
+
+  ::selection {
+    background-color: hsl(var(--primary) / 0.3);
+    color: hsl(var(--foreground));
+    text-shadow: 0 0 8px hsl(var(--primary) / 0.5);
+  }
+
+  @keyframes bounce {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+
+  .animate-bounce-delay-1 {
+    animation: bounce 1s infinite;
+    animation-delay: 0.1s;
+  }
+
+  .animate-bounce-delay-2 {
+    animation: bounce 1s infinite;
+    animation-delay: 0.2s;
+  }
+
+  .animate-bounce-delay-3 {
+    animation: bounce 1s infinite;
+    animation-delay: 0.3s;
+  }
+
+  /* Noise Texture */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 50;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.025;
+    mix-blend-mode: hard-light;
+  }
+
+  /* Reworked Glow Utilities */
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+
+  .glow-box {
+    box-shadow: 0 0 40px -10px hsl(var(--primary) / 0.2);
+  }
+}

@@ -1,0 +1,10 @@
+appId: com.perplexity.client
+productName: Perplexity Client
+directories:
+  output: dist
+  buildResources: resources
+win:
+  target: nsis
+  # Icon is auto-detected from build/icon.png
+  # icon: resources/icon.png
+  executableName: Perplexity
