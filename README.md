@@ -40,4 +40,3 @@ npm run build:win  # For Windows
 npm run build:mac  # For macOS
 npm run build:linux # For Linux
 ```
-
