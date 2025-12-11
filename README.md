@@ -1,6 +1,6 @@
 # Perplexity Client
 
-A lightweight Perplexity AI client built with Electron, React, and TypeScript.
+A lightweight Perplexity AI client built with Electron, React, and TypeScript. Free and open source!
 
 ## Features
 
