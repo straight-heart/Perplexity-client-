@@ -5,7 +5,7 @@ If your looking to use your pro credits that are going to expire anyway, use thi
 this is the most likely last public release other than bug fixes and maintenance, im working on a add-on for perplexity that maximises privacy, giving you the *full control over your data*.
 > ### Required <you need to use a perplexity or openrouter api key for the application to work!>
 
- 1. ### Clean and productive UI (Win11)--
+ 1. ### Clean and productive UI (Win11)
 
 ![Image](https://dc.missuo.ru/file/1449460069946097715)
 ---
