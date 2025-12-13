@@ -22,7 +22,7 @@ this is the most likely last public release other than bug fixes and maintenance
 ---
  4. ### Custom instructions in spaces
 
->     Showing in space
+>  Showing in space
 
  
 ![Image](https://dc.missuo.ru/file/1449459323679019148)
